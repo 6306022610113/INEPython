@@ -16,7 +16,7 @@ while ntries < 7 and mynumber != yourguess :
         print("--> too low")
     ntries += 1
 
-if yourguess == mynumber:
+if mynumber == yourguess:
     print("Yes! it's" ,mynumber)
 else :
     print("Sorry! my number is" , mynumber)
