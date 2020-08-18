@@ -1,4 +1,4 @@
 ss = input('Seach name : ')
 cc = ss.find('ball')
 
-print('',ss[cc:])
+print('',ss[cc:cc+6])
