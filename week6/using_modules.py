@@ -41,4 +41,5 @@ def display_menu():
     print('4) Perimeter of a rectangle')
     print('5) Quit')
 
+#Call the main function.
 main()
