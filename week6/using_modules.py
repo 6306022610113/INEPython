@@ -14,7 +14,7 @@ def main() :
         choice = int(input('Enter your choice : '))
         if choice == AREA_CIRCLE_CHOICE:
             radius = float(input("Enter the circle's radius : "))
-            print('The area is ',circlr.area(radius))
+            print('The area is ',circle.area(radius))
         elif choice == CIRCUMFERENCE_CHOICE :
             radius = float(input("Enter the circle's radius : "))
             print('The circumference is', \
