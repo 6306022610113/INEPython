@@ -1,6 +1,6 @@
 def main():
 
-    infile = open('philosophers.txt','r')
+    infile = open('week7/philosophers.txt','r')
 
     #read three lines from the file
     line1 = infile.readline()

@@ -1,5 +1,5 @@
 def main():
-    outfile = open('numbers.txt','w')
+    outfile = open('week7/numbers.txt','w')
 
     num1 = int(input('Enter a number: '))
     num2 = int(input('Enter another number: '))
@@ -10,6 +10,6 @@ def main():
     outfile.write(str(num3) + '\n')
 
     outfile.close()
-    prin('Data written to numbers.txt')
+    print('Data written to numbers.txt')
 
 main()

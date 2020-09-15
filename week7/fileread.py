@@ -1,6 +1,6 @@
 def main():
 
-    infile = open('philosophers.txt','r')
+    infile = open('week7/philosophers.txt','r')
 
     file_contents = infile.read()
 

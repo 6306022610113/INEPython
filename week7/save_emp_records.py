@@ -3,7 +3,7 @@ def main():
     num_emps = int(input('How many employee records' + \
                         'do you want to create? '))
     
-    emp_file = open('employees.txt','w')
+    emp_file = open('week7/employees.txt','w')
 
     for count in range(1, num_emps + 1):
 
@@ -12,9 +12,9 @@ def main():
         id_num = input('ID number: ')
         dept = input('Department: ')
 
-        emp_file.write(name + '\n')
-        emp_file.write(id_num + '\n')
-        emp_file.write(dept + '\n')
+        emp_file.write('Name: ',name + '\n')
+        emp_file.write('ID: ',id_num + '\n')
+        emp_file.write('Department: ',dept + '\n')
 
         print()
 

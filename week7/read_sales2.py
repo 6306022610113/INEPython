@@ -1,5 +1,5 @@
 def main():
-    sales_file = open('sales.txt', 'r')
+    sales_file = open('week7/sales.txt', 'r')
 
     
 

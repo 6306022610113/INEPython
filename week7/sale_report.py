@@ -3,9 +3,9 @@ def main():
     total = 0.0
 
     try:
-        infile = open('sales_data.txt','r')
+        infile = open('week7/sales_data.txt','r')
 
-        for line in infile
+        for line in infile:
             amount = float(line)
             total += amount
 
