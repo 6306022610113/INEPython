@@ -4,6 +4,7 @@ print("What is my mad]gic number (1 or 100) ?")
 mynumber = random.randint(1,100)
 ntries = 1
 yourguess = -1
+print(mynumber)
 while ntries < 7 and mynumber != yourguess :
     msg = str(ntries) + ">> "
     if(ntries == 6) :

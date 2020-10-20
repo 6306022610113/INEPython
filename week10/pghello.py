@@ -1,4 +1,4 @@
-import pgzero
+import pgzrun
 
 WIDTH = 400
 HEIGHT = 300
