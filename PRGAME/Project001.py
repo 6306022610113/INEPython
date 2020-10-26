@@ -6,30 +6,45 @@ WIDTH = 800
 HEIGHT = 500
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
-
-# LETTER = {"letter": "", "x": 0, "y": 0}
+PINK = (255, 62, 30)
+game_over = False
 ON_SCREEN_LETTERS = []
 VELOCITY = 1
+inter = 0
+#toyo = Actor('re',(400,250))
 SCORE = {"RIGHT": 0, "WRONG": 0}
 
-
-def draw():  # Pygame Zero draw function
+def draw():
+    #screen.blit(0,0,0)
+    #toyo.draw()
+    #if inter == 1:
     screen.clear()
-    screen.fill(BLACK)
+        #screen.blit(0,0,0)
     for LETTER in ON_SCREEN_LETTERS:
         screen.draw.text(LETTER["letter"], (LETTER["x"], LETTER["y"]), fontsize=50, color=WHITE)
     screen.draw.text("RIGHT: " + str(SCORE["RIGHT"]), (WIDTH - 130, 10), fontsize=30, color=WHITE)
     screen.draw.text("WRONG: " + str(SCORE["WRONG"]), (WIDTH - 130, 40), fontsize=30, color=WHITE)
 
+    if game_over:
+        screen.fill('black')
+        message = 'Score : '+str(SCORE["RIGHT"])
+        screen.draw.text(message, topleft=(10,10), fontsize=50)
+
+#def on_mouse_down(pos):
+#    global inter
+#    if toyo.collidepoint(pos):
+#        print("yes")
+#        inter += 1
 
 def update():
-    for i, LETTER in enumerate(ON_SCREEN_LETTERS):
-        LETTER["y"] += VELOCITY
-        if LETTER["y"] == HEIGHT - 5:
-            SCORE["WRONG"] += 1
-            delete_letter(i)
-    while len(ON_SCREEN_LETTERS) < 4:
-        add_letter()
+    if inter == 1:
+        for i, LETTER in enumerate(ON_SCREEN_LETTERS):
+            LETTER["y"] += VELOCITY
+            if LETTER["y"] == HEIGHT - 5:
+                SCORE["WRONG"] += 1
+                delete_letter(i)
+        while len(ON_SCREEN_LETTERS) < 5:
+            add_letter()
 
 
 def on_key_down(key, mod, unicode):
@@ -54,5 +69,10 @@ def delete_letter(i):
     del ON_SCREEN_LETTERS[i]
     add_letter()
 
+def time_up():
+    global game_over
+    game_over = True
+
+clock.schedule(time_up, 10.0)
 
 pgzrun.go()
