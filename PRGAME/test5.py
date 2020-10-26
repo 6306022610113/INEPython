@@ -9,9 +9,10 @@ HEIGHT = 500
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 
-image = pygame.image.load(r'PRGAME\images\index.gif')
-image1 = Actor('index2')
-image2 = Actor('index2')
+image = pygame.image.load(r'PRGAME\images\BG5.jpg')
+image1 = pygame.image.load(r'PRGAME\images\index2.jpg')
+image2 = pygame.image.load(r'PRGAME\images\index3.jpg')
+
 start = Actor('start')
 start.pos = 390,200
 start1 = 0
@@ -32,7 +33,9 @@ hard.pos = 500,300
 hard1 = 0
 pause = Actor('pause')
 pause.pos = 700,480
-
+con = Actor('conti')
+replay = Actor('replay')
+endgame = ('exit2')
 pause1 = 0
 
 vocab = ['cat','dog','ant','fox','face','mask','drop','bag','bird','bad','good']
@@ -50,7 +53,7 @@ mm = ''
 
 def draw():
     screen.fill((0,0,0))
-    screen.blit(image,(0,0))
+    screen.blit(image1,(0,0))
     start.draw()
     le.draw()
     exit1.draw()
@@ -63,7 +66,7 @@ def draw():
 
     if easy1 == 1 or normal1 == 1 or hard1 == 1:
         screen.clear()
-        screen.blit('image1',(0,0))
+        screen.blit(image2,(0,0))
         pause.draw()
         for LETTER in ON_SCREEN_LETTERS:
             screen.draw.text(LETTER["letter"], (LETTER["x"], LETTER["y"]), fontsize=50, color=WHITE)
@@ -72,7 +75,23 @@ def draw():
         screen.draw.text("VOCABULARY: " + str(trip), (10, HEIGHT - 30), fontsize=30, color=WHITE)
     if pause1 == 1:
         screen.clear()
-        screen.blit('image2',(0,0))
+        screen.blit(image,(0,0))
+        con.draw()
+        con.pos = 540,100
+        endgame.draw()
+        endgame.pos = 540,300
+        replay.draw()
+        replay.pos = 540, 500
+#    if exit == 1:
+#        screen.clear()
+#        screen.blit('endback',(0,0))
+#        playagain.draw()
+#        screen.draw.text("CORRECT: " + str(SCORE["CORRECT"]), (WIDTH - 570, 200), fontsize=50, color=WHITE)
+#        screen.draw.text("WRONG: " + str(SCORE["WRONG"]), (WIDTH - 550, 300), fontsize=50, color=WHITE)
+#    if SCORE["WRONG"] == 3:
+#       pause1 = 1
+#        exit = 1
+
 def on_mouse_down(pos):
     global pause1,start1,exit2,easy1,normal1,hard1,leader,ON_SCREEN_LETTERS
     if pause1 != 1 and start1 <= 1:
