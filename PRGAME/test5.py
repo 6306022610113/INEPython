@@ -32,7 +32,7 @@ hard = Actor('hard')
 hard.pos = 500,300
 hard1 = 0
 pause = Actor('pause')
-pause.pos = 700,480
+pause.pos = 650,470
 con = Actor('conti')
 replay = Actor('replay')
 endgame = ('exit2')
@@ -73,15 +73,15 @@ def draw():
         screen.draw.text("RIGHT: " + str(SCORE["RIGHT"]), (WIDTH - 130, 10), fontsize=30, color=WHITE)
         screen.draw.text("WRONG: " + str(SCORE["WRONG"]), (WIDTH - 130, 40), fontsize=30, color=WHITE)
         screen.draw.text("VOCABULARY: " + str(trip), (10, HEIGHT - 30), fontsize=30, color=WHITE)
-    if pause1 == 1:
-        screen.clear()
-        screen.blit(image,(0,0))
-        con.draw()
-        con.pos = 540,100
-        endgame.draw()
-        endgame.pos = 540,300
-        replay.draw()
-        replay.pos = 540, 500
+#    if pause1 == 1:
+#        screen.clear()
+#       screen.blit(image,(0,0))
+#        con.draw()
+#        con.pos = 540,100
+#        endgame.draw()
+#        endgame.pos = 540,300
+#        replay.draw()
+#        replay.pos = 540, 500
 #    if exit == 1:
 #        screen.clear()
 #        screen.blit('endback',(0,0))
